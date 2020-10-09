@@ -931,7 +931,7 @@ func loadHttpRouterSingle(method, path string, handle httprouter.Handle) http.Ha
 }
 
 func loadBaseRouterSingle(method, path string, handle baserouter.HandleFunc) http.Handler {
-	router := New()
+	router := baserouter.New()
 	router.Handle(method, path, handle)
 	return router
 }

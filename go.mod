@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/aerogo/aero v1.3.42
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
-	github.com/antlabs/baserouter v0.0.0-20200930103912-ac3915735404
+	github.com/antlabs/baserouter v0.0.0-20201009110223-8865bb61d830
 	github.com/astaxie/beego v1.12.0
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
 	github.com/cloudykit/router v0.0.0-20170501012743-15c4ed71df81

@@ -36,6 +36,8 @@ github.com/ant0ine/go-json-rest v3.3.2+incompatible h1:nBixrkLFiDNAW0hauKDLc8yJI
 github.com/ant0ine/go-json-rest v3.3.2+incompatible/go.mod h1:q6aCt0GfU6LhpBsnZ/2U+mwe+0XB5WStbmwyoPfc+sk=
 github.com/antlabs/baserouter v0.0.0-20200930103912-ac3915735404 h1:2X9MDG1ICzj/qxliuziTPBdZhA/oS2vAyuhxNvzQ3rk=
 github.com/antlabs/baserouter v0.0.0-20200930103912-ac3915735404/go.mod h1:1KIk8suBq5jJQUV5hz4B9kD25YJHwBBGC3YvodNJECM=
+github.com/antlabs/baserouter v0.0.0-20201009110223-8865bb61d830 h1:mwG9TXj0CE9XJQpijNFTduKdTP/B7K4tchkMqW5eqL8=
+github.com/antlabs/baserouter v0.0.0-20201009110223-8865bb61d830/go.mod h1:azmAYhZp1+m/1PEIi4y6qg4zh05F4+u8NBMOoaDxJ80=
 github.com/astaxie/beego v1.12.0 h1:MRhVoeeye5N+Flul5PoVfD9CslfdoH+xqC/xvSQ5u2Y=
 github.com/astaxie/beego v1.12.0/go.mod h1:fysx+LZNZKnvh4GED/xND7jWtjCR6HzydR2Hh2Im57o=
 github.com/beego/goyaml2 v0.0.0-20130207012346-5545475820dd/go.mod h1:1b+Y/CofkYwXMUU0OhQqGvsY2Bvgr4j6jfT699wyZKQ=
