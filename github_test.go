@@ -292,6 +292,7 @@ var (
 	githubGorillaMux      http.Handler
 	githubGowwwRouter     http.Handler
 	githubHttpRouter      http.Handler
+	githubBaseRouter      http.Handler
 	githubHttpTreeMux     http.Handler
 	githubKocha           http.Handler
 	githubLARS            http.Handler
@@ -365,6 +366,9 @@ func init() {
 	})
 	calcMem("HttpRouter", func() {
 		githubHttpRouter = loadHttpRouter(githubAPI)
+	})
+	calcMem("BaseRouter", func() {
+		githubBaseRouter = loadBaseRouter(githubAPI)
 	})
 	calcMem("HttpTreeMux", func() {
 		githubHttpTreeMux = loadHttpTreeMux(githubAPI)
@@ -485,6 +489,10 @@ func BenchmarkGowwwRouter_GithubStatic(b *testing.B) {
 	benchRequest(b, githubGowwwRouter, req)
 }
 func BenchmarkHttpRouter_GithubStatic(b *testing.B) {
+	req, _ := http.NewRequest("GET", "/user/repos", nil)
+	benchRequest(b, githubHttpRouter, req)
+}
+func BenchmarkBaseRouter_GithubStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/user/repos", nil)
 	benchRequest(b, githubHttpRouter, req)
 }

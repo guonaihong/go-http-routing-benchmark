@@ -911,6 +911,10 @@ func httpRouterHandleTest(w http.ResponseWriter, r *http.Request, _ httprouter.P
 	io.WriteString(w, r.RequestURI)
 }
 
+func baseRouterHandleTest(w http.ResponseWriter, r *http.Request, _ baserouter.Params) {
+	io.WriteString(w, r.RequestURI)
+}
+
 func loadHttpRouter(routes []route) http.Handler {
 	h := httpRouterHandle
 	if loadTestHandler {
@@ -918,6 +922,19 @@ func loadHttpRouter(routes []route) http.Handler {
 	}
 
 	router := httprouter.New()
+	for _, route := range routes {
+		router.Handle(route.method, route.path, h)
+	}
+	return router
+}
+
+func loadBaseRouter(routes []route) http.Handler {
+	h := baseRouterHandle
+	if loadTestHandler {
+		h = baseRouterHandleTest
+	}
+
+	router := baserouter.New()
 	for _, route := range routes {
 		router.Handle(route.method, route.path, h)
 	}
