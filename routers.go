@@ -24,6 +24,7 @@ import (
 	"github.com/go-playground/lars"
 
 	// "github.com/daryl/zeus"
+	"github.com/antlabs/baserouter"
 	cloudykitrouter "github.com/cloudykit/router"
 	"github.com/dimfeld/httptreemux"
 	"github.com/emicklei/go-restful"
@@ -899,6 +900,9 @@ func loadGowwwRouterSingle(method, path string, handler http.Handler) http.Handl
 // HttpRouter
 func httpRouterHandle(_ http.ResponseWriter, _ *http.Request, _ httprouter.Params) {}
 
+// BaseRouter
+func baseRouterHandle(_ http.ResponseWriter, _ *http.Request, _ baserouter.Params) {}
+
 func httpRouterHandleWrite(w http.ResponseWriter, _ *http.Request, ps httprouter.Params) {
 	io.WriteString(w, ps.ByName("name"))
 }
@@ -922,6 +926,12 @@ func loadHttpRouter(routes []route) http.Handler {
 
 func loadHttpRouterSingle(method, path string, handle httprouter.Handle) http.Handler {
 	router := httprouter.New()
+	router.Handle(method, path, handle)
+	return router
+}
+
+func loadBaseRouterSingle(method, path string, handle baserouter.HandleFunc) http.Handler {
+	router := New()
 	router.Handle(method, path, handle)
 	return router
 }
